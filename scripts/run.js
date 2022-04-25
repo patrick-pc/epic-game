@@ -3,31 +3,28 @@ const main = async () => {
   const gameContract = await gameContractFactory.deploy(
     ['Tanjiro', 'Eren', 'Luffy'], // Character names
     [
-      'https://i.imgur.com/kWMayHv.gif', // Character images
-      'https://i.imgur.com/9dSPBsw.gif',
-      'https://i.imgur.com/kgnnEFy.gif',
+      'QmVifKUaeSUDcz4YxBAkLhnatPG3R5oWcWsbSFrm9sgFEQ', // Character images
+      'QmaYgbLhac6HosV9foD5AtEnLRbzPSa6YAU2MPL9f44tho',
+      'QmcumB7XENFaNNrqKw2SkeuooPbHK6VGogskwUoDFa8p9U',
     ],
     [100, 200, 300], // Character hp values
     [100, 50, 25], // Character damage values
     'Elon Musk', // Boss name
-    'https://i.imgur.com/AksR0tt.png', // Boss image
+    'Qmens3TSDu2rpf7KSdoNGZdnLkN9CnS2mX7eyt6KUF4uNi', // Boss image
     10000, // Boss hp
     50 // Boss damage
   );
   await gameContract.deployed();
   console.log('Contract address:', gameContract.address);
 
-  let txn = await gameContract.mintCharacterNFT(2);
+  let txn = await gameContract.mintCharacterNFT(1);
   await txn.wait();
 
   txn = await gameContract.attackBoss();
   await txn.wait();
 
-  txn = await gameContract.attackBoss();
-  await txn.wait();
-
-  // let returnedTokenURI = await gameContract.tokenURI(1)
-  // console.log('Token URI:', returnedTokenURI)
+  let returnedTokenURI = await gameContract.tokenURI(1)
+  console.log('Token URI:', returnedTokenURI)
 };
 
 const runMain = async () => {
