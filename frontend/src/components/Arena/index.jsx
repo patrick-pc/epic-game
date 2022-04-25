@@ -6,7 +6,7 @@ import {
 } from '../../utils/constants';
 import myEpicGame from '../../utils/MyEpicGame.json';
 import './Arena.css';
-import LoadingIndicator from '../../Components/LoadingIndicator';
+import LoadingIndicator from '../../components/LoadingIndicator';
 
 const Arena = ({ characterNFT, setCharacterNFT }) => {
   const [gameContract, setGameContract] = useState(null);

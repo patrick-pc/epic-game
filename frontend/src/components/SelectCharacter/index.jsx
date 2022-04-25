@@ -6,7 +6,7 @@ import {
   transformCharacterData,
 } from '../../utils/constants';
 import myEpicGame from '../../utils/MyEpicGame.json';
-import LoadingIndicator from '../../Components/LoadingIndicator';
+import LoadingIndicator from '../../components/LoadingIndicator';
 
 const SelectCharacter = ({ setCharacterNFT }) => {
   const [characters, setCharacters] = useState([]);
