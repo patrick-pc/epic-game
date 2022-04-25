@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import twitterLogo from './assets/twitter-logo.svg';
-import './App.css';
-import SelectCharacter from './components/SelectCharacter';
 import { ethers } from 'ethers';
+import './App.css';
+import twitterLogo from './assets/twitter-logo.svg';
+import SelectCharacter from './components/SelectCharacter';
+import Arena from './Components/Arena';
 import myEpicGame from './utils/MyEpicGame.json';
 import {
   TWITTER_HANDLE,
@@ -83,6 +84,10 @@ function App() {
       );
     } else if (currentAccount && !characterNFT) {
       return <SelectCharacter setCharacterNFT={setCharacterNFT} />;
+    } else if (currentAccount && characterNFT) {
+      return (
+        <Arena characterNFT={characterNFT} setCharacterNFT={setCharacterNFT} />
+      );
     }
   };
 
