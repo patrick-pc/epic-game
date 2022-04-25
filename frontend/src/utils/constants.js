@@ -1,4 +1,4 @@
-const TWITTER_HANDLE = '_buildspace';
+const TWITTER_HANDLE = 'web3slinger';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 const CONTRACT_ADDRESS = '0xcCaD1A50fa91C7d0cBd12F4fED13780dFBE81ECb';
 
