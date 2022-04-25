@@ -97,40 +97,6 @@ function App() {
     }
   };
 
-  const mintNFT = async () => {
-    try {
-      checkNetwork();
-
-      const { ethereum } = window;
-
-      if (ethereum) {
-        const provider = new ethers.providers.Web3Provider(ethereum);
-        const signer = provider.getSigner();
-        const connectedContract = new ethers.Contract(
-          CONTRACT_ADDRESS,
-          myEpicGame.abi,
-          signer
-        );
-
-        console.log('Going to pop wallet now to pay gas...');
-        let nftTxn = await connectedContract.mintCharacterNFT();
-
-        console.log('Mining...please wait.');
-        setIsMining(true);
-        await nftTxn.wait();
-        setIsMining(false);
-
-        console.log(
-          `Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`
-        );
-      } else {
-        console.log("Ethereum object doesn't exist!");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
     const fetchNFTMetadata = async () => {
       console.log('Checking for Character NFT on address:', currentAccount);

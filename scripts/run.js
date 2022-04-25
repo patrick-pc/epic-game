@@ -1,5 +1,5 @@
 const main = async () => {
-  const gameContractFactory = await hre.ethers.getContractFactory('MyEpicGame')
+  const gameContractFactory = await hre.ethers.getContractFactory('MyEpicGame');
   const gameContract = await gameContractFactory.deploy(
     ['Tanjiro', 'Eren', 'Luffy'], // Character names
     [
@@ -13,31 +13,31 @@ const main = async () => {
     'https://i.imgur.com/AksR0tt.png', // Boss image
     10000, // Boss hp
     50 // Boss damage
-  )
-  await gameContract.deployed()
-  console.log('Contract address:', gameContract.address)
+  );
+  await gameContract.deployed();
+  console.log('Contract address:', gameContract.address);
 
-  let txn = await gameContract.mintCharacterNFT(2)
-  await txn.wait()
+  let txn = await gameContract.mintCharacterNFT(2);
+  await txn.wait();
 
-  txn = await gameContract.attackBoss()
-  await txn.wait()
-  
-  txn = await gameContract.attackBoss()
-  await txn.wait()
+  txn = await gameContract.attackBoss();
+  await txn.wait();
+
+  txn = await gameContract.attackBoss();
+  await txn.wait();
 
   // let returnedTokenURI = await gameContract.tokenURI(1)
   // console.log('Token URI:', returnedTokenURI)
-}
+};
 
 const runMain = async () => {
   try {
-    await main()
-    process.exit(0)
+    await main();
+    process.exit(0);
   } catch (error) {
-    console.error(error)
-    process.exit(1)
+    console.error(error);
+    process.exit(1);
   }
-}
+};
 
-runMain()
+runMain();
