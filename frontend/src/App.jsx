@@ -3,8 +3,8 @@ import { ethers } from 'ethers';
 import './App.css';
 import twitterLogo from './assets/twitter-logo.svg';
 import SelectCharacter from './components/SelectCharacter';
-import Arena from './Components/Arena';
-import LoadingIndicator from './Components/LoadingIndicator';
+import Arena from './components/Arena';
+import LoadingIndicator from './components/LoadingIndicator';
 import myEpicGame from './utils/MyEpicGame.json';
 import {
   TWITTER_HANDLE,
